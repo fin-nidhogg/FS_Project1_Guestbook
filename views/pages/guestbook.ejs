@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <!-- Nav start -->
+    <%- include('../partials/nav'); %>
+        <!-- Nav end -->
+
+        <!-- Reading data to table -->
+        <div class="container py-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="row">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Coyntry</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i=0; i < entries.length; i++){ %>
+                        <tr>
+                            <td scope="row">
+                                <%= entries[i].id %>
+                            </td>
+                            <td>
+                                <%= entries[i].username %>
+                            </td>
+                            <td>
+                                <%= entries[i].country %>
+                            </td>
+                            <td>
+                                <%= entries[i].date %>
+                            </td>
+                            <td>
+                                <%= entries[i].message %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+        <!-- Table end -->
+</body>
+
+</html>

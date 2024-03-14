@@ -1,0 +1,6 @@
+# Exclude node_modules from the build
+node_modules/
+
+# Exclude specific files ie logs etc
+.env
+*.log
