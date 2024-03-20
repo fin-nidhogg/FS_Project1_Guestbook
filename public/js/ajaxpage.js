@@ -1,6 +1,7 @@
 const entryform = document.getElementById("entryform");
 const tabledata = document.getElementById("tabledata");
 
+
 window.onload = event => {
     console.log("document loaded");
     getMessages();
@@ -11,17 +12,28 @@ window.onload = event => {
         const username = document.getElementById('username').value;
         const country = document.getElementById('country').value;
         const message = document.getElementById('message').value;
-        sendData(username, country, message);
-        getMessages();
+
+        // Tarkistetaan että kentät eivät ole tyhjiä ennen datan lähettämistä
+        if (username === '' || country === '' || message === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+        else {
+            sendData(username, country, message);
+            getMessages();
+            entryform.reset();
+        }
     });
-
-
 }
+
 
 // Funktio tietojen hakemiseksi palvelimelta
 async function getMessages() {
     const response = await fetch("/entries");
     const messages = await response.json();
+
+    // Tyhjennetään taulukko ennen uuden datan lisäämistä
+    tabledata.innerHTML = '';
     messages.forEach(message => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -34,7 +46,6 @@ async function getMessages() {
         tabledata.appendChild(tr);
     });
 }
-
 
 
 // Funktion ajaxpyynnön lähettämiseksi palvelimelle käyttäen fetch-metodia
@@ -53,7 +64,6 @@ const sendData = async (username, country, message) => {
             console.log(response);
         } else {
             console.log('Failed to send data');
-            console.log(response);
         }
     } catch (error) {
         console.error('Error:', error);
