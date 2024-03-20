@@ -97,10 +97,7 @@ app.post("/newmessage", (req, res) => {
         return;
     } else {
         saveData(req);
-        res.send("Data received successfully!, Redirecting shortly to entries page", 200);
-        setTimeout(() => {
-            res.redirect("/guestbook");
-        }, 2000);
+        res.send('Data received successfully! <a href="/guestbook">Back to frontpage</a>', 200);
     }
 });
 
