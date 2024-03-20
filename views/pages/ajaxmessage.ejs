@@ -3,6 +3,7 @@
 
 <head>
     <%- include('../partials/head'); %>
+
 </head>
 
 <body>
@@ -10,6 +11,27 @@
     <%- include('../partials/nav'); %>
         <!-- Nav end -->
         <%- include('../partials/form'); %>
+
+            <!-- Table alkaa -->
+            <div class="container py-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="row">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Coyntry</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabledata">
+                        // Tähän taulukon sisältö datasta
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table end -->
+
+            <script src="../js/ajaxpage.js"></script>
 </body>
 
 </html>

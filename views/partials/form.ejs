@@ -6,7 +6,7 @@
         <div class="col-6">
 
             <!-- Form -->
-            <form method="POST" action="/newmessage">
+            <form id="entryform" method="POST" action="/newmessage">
                 <div class="my-3">
                     <label for="username" class="form-label">Username</label>
                     <input class="form-control" type="text" id="username" name="username" placeholder="Your name"
@@ -22,7 +22,7 @@
                     <input class="form-control" type="text" id="message" name="message" placeholder="Your message"
                         required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="sendbutton" type="submit" class="btn btn-primary">Submit</button>
             </form>
             <!-- Form end-->
 

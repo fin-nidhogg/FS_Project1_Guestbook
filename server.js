@@ -12,31 +12,19 @@ const bodyParser = require("body-parser");
 const PORT = 3100;
 var data = require("./public/data/data.json")
 
-// Staattiset sivut ja ejs käyttöön
+// CORS käyttöön
+const cors = require('cors');
+app.use(cors());
+
+// Staattiset sivut ja ejs käyttöön yms middlewaret
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set("view engine", "ejs");
 
-// Reitti etusivun näkymään
-app.get("/", (req, res) => {
-    res.render("./pages/home")
-    console.log(req.path)
-});
 
-// Reitti viestien listaukseen
-app.get("/guestbook", (req, res) => {
-    res.render("./pages/guestbook", { entries: data });
-    console.log(req.path)
-});
-
-// Reitti formiin uuden viestin lisäämiseksi
-app.get("/newmessage", (req, res) => {
-    res.render("./pages/newmessage")
-    console.log(req.path)
-});
-
-// Käsitellään formilta tulevaa dataa
-app.post("/newmessage", (req, res) => {
+// Funktio formin tietojen tallennukseen
+const saveData = (req) => {
     // Haetaan data formista ja muodostetaan siitä objekti.
     var dateNow = new Date();
     var newEntry = {
@@ -52,6 +40,34 @@ app.post("/newmessage", (req, res) => {
     var dataToWrite = JSON.stringify(data, "", 1);
     fs.writeFileSync("./public/data/data.json", dataToWrite
     );
+}
+
+// Reitti etusivun näkymään
+app.get("/", (req, res) => {
+    res.render("./pages/home")
+    console.log(req.path)
+});
+
+// Reitti viestien listaukseen
+app.get("/guestbook", (req, res) => {
+    res.render("./pages/guestbook", { entries: data });
+    console.log(req.path)
+});
+
+// Reitti JSON muotoiseen dataan
+app.get("/entries", (req, res) => {
+    res.send(JSON.stringify(data));
+});
+
+// Reitti formiin uuden viestin lisäämiseksi
+app.get("/newmessage", (req, res) => {
+    res.render("./pages/newmessage")
+    console.log(req.path)
+});
+
+// Käsitellään formilta tulevaa POST dataa
+app.post("/newmessage", (req, res) => {
+    saveData(req);
     res.redirect("/guestbook");
 });
 
@@ -59,6 +75,12 @@ app.post("/newmessage", (req, res) => {
 app.get("/ajaxmessage", (req, res) => {
     res.render("./pages/ajaxmessage")
     console.log(req.path)
+});
+
+// Käsitellään formilta tulevaa POST dataa
+app.post("/newajaxmessage", (req, res) => {
+    saveData(req);
+    console.log("Dataa tulloopi");
 });
 
 // Jollei pyydettyä routea löyty, palautetaan virheilmoitus
