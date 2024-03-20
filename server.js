@@ -17,21 +17,19 @@ app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-
-// Path etusivun näkymään
+// Reitti etusivun näkymään
 app.get("/", (req, res) => {
     res.render("./pages/home")
     console.log(req.path)
 });
 
-
-// Route for guestbook entries page!
+// Reitti viestien listaukseen
 app.get("/guestbook", (req, res) => {
     res.render("./pages/guestbook", { entries: data });
     console.log(req.path)
 });
 
-// Route to form for adding entries into JSON with post
+// Reitti formiin uuden viestin lisäämiseksi
 app.get("/newmessage", (req, res) => {
     res.render("./pages/newmessage")
     console.log(req.path)
