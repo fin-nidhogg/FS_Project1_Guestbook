@@ -8,38 +8,7 @@
 <body>
     <!-- Nav start -->
     <%- include('../partials/nav'); %>
-        <!-- Nav end -->
-        <div class="container py-5">
-            <div class="row justify-content-md-center text-center">
-                <h3>Leave a message!</h3>
-            </div>
-            <div class="row justify-content-md-center">
-                <div class="col-6">
-
-                    <!-- Form -->
-                    <form method="POST" action="/newmessage">
-                        <div class="my-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input class="form-control" type="text" id="username" name="username"
-                                placeholder="Your name" required>
-                        </div>
-                        <div class="my-3">
-                            <label for="country" class="form-label">Your country</label>
-                            <input class="form-control" type="text" id="country" name="country"
-                                placeholder="Where you are from?" required>
-                        </div>
-                        <div class="my-3">
-                            <label for="message" class="form-label">Message</label>
-                            <input class="form-control" type="text" id="message" name="message"
-                                placeholder="Your message" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                    <!-- Form end-->
-
-                </div>
-            </div>
-        </div>
+        <%- include('../partials/form'); %>
 </body>
 
 </html>

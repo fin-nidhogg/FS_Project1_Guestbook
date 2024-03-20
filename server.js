@@ -59,7 +59,7 @@ app.post("/newmessage", (req, res) => {
 
 // Route AJAX Formille
 app.get("/ajaxmessage", (req, res) => {
-    res.send("ajax message")
+    res.render("./pages/ajaxmessage")
     console.log(req.path)
 });
 
@@ -72,3 +72,4 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
     console.log(`App is listening at port ${PORT}`)
 });
+
