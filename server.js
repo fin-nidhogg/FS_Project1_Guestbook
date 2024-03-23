@@ -93,11 +93,11 @@ app.get("/newmessage", (req, res) => {
 
 app.post("/newmessage", (req, res) => {
     if (req.body.username === "" || req.body.country === "" || req.body.message === "") {
-        res.send('Please fill in all fields! <a href="/newmessage">Back to Form</a>', 400);
+        res.status(400).send('Please fill in all fields! <a href="/newmessage">Back to Form</a>');
         return;
     } else {
         saveData(req);
-        res.send('Data received successfully! <a href="/guestbook">Back to frontpage</a>', 200);
+        res.status(200).send('Data received successfully! <a href="/guestbook">Back to frontpage</a>');
     }
 });
 
@@ -118,13 +118,13 @@ app.get("/ajaxmessage", (req, res) => {
 app.post("/newajaxmessage", (req, res) => {
     try {
         if (req.body.username === "" || req.body.country === "" || req.body.message === "") {
-            res.send('Please fill in all fields', 400);
+            res.status(400).send('Please fill in all fields');
             return;
         }
         else {
             saveData(req);
             console.log("Dataa tulloopi");
-            res.send('Data received successfully!', 200);
+            res.status(200).send('Data received successfully!');
         }
     }
     catch (error) {
@@ -136,7 +136,7 @@ app.post("/newajaxmessage", (req, res) => {
 ///////////////////////////////////////////////////
 
 app.get("*", (req, res) => {
-    res.send("Error 404: Cannot find the requested page", 404)
+    res.status(404).send("Error 404: Cannot find the requested page");
 });
 
 ///////////////////////////////////////////////////
@@ -144,6 +144,6 @@ app.get("*", (req, res) => {
 ///////////////////////////////////////////////////
 
 app.listen(PORT, () => {
-    console.log(`App is listening at port ${PORT}`)
+    console.log(`App is listening at port ${PORT} \nYou can access the app at http://localhost:${PORT}`)
 });
 
