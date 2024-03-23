@@ -2,31 +2,15 @@ FullStack **Projektiraportti**
 
 # Sisällysluettelo
 
-[1 Yleistä tietoa projektista
-[3](#yleistä-tietoa-projektista)](#yleistä-tietoa-projektista)
-
-[2 Käytettyjä tekniikoita ja erikoisuuksia
-[3](#käytettyjä-tekniikoita-ja-erikoisuuksia)](#käytettyjä-tekniikoita-ja-erikoisuuksia)
-
-[3 Sivuston / ohjelmiston design ja rakenne
-[3](#sivuston-ohjelmiston-design-ja-rakenne)](#sivuston-ohjelmiston-design-ja-rakenne)
-
-[4 Oma arvio työstä ja oman osaamisen kehittymisestä
-[4](#oma-arvio-työstä-ja-oman-osaamisen-kehittymisestä)](#oma-arvio-työstä-ja-oman-osaamisen-kehittymisestä)
-
-[5 Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
-[4](#palaute-opettajalle-kurssista-sekä-itse-opetuksesta-tähän-saakka)](#palaute-opettajalle-kurssista-sekä-itse-opetuksesta-tähän-saakka)
-
-[6 Linkit [5](#linkit)](#linkit)
-
-[6.1 Verkkosivuni osoite
-[5](#verkkosivuni-osoite)](#verkkosivuni-osoite)
-
-[6.2 Linkki GitHub repositorioon
-[5](#linkki-github-repositorioon)](#linkki-github-repositorioon)
-
-[6.3 Linkki projektin videoesitykseen
-[5](#linkki-projektin-videoesitykseen)](#linkki-projektin-videoesitykseen)
+[1 Yleistä tietoa projektista](#yleistä-tietoa-projektista)  
+[2 Käytettyjä tekniikoita ja erikoisuuksia](#käytettyjä-tekniikoita-ja-erikoisuuksia)  
+[3 Sivuston design ja rakenne](#sivuston-design-ja-rakenne)  
+[4 Oma arvio työstä ja oman osaamisen kehittymisestä](#oma-arvio-työstä-ja-oman-osaamisen-kehittymisestä)  
+[5 Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka](#palaute-opettajalle-kurssista-sekä-itse-opetuksesta-tähän-saakka)  
+[6 Linkit](#linkit)  
+[6.1 Verkkosivuni osoite](#verkkosivuni-osoite)  
+[6.2 Linkki GitHub repositorioon](#linkki-github-repositorioon)  
+[6.3 Linkki projektin videoesitykseen](#linkki-projektin-videoesitykseen)  
 
 # Yleistä tietoa projektista
 
@@ -47,7 +31,7 @@ löytyvät ns. expressin tarjoamien näkymien (views) ja osien (partials)
 hyödyntämisenä. Nämä tarjoavat oivan tavan tehdä pienempiä uudelleen
 käytettäviä komponentteja, jolloin koodin toisto vähenee merkittävästi.
 
-# Sivuston / ohjelmiston design ja rakenne
+# Sivuston design ja rakenne
 
 Halusin, että verkkosivuni olisi suhteellisen simppeli mutta tehokas.
 Käyttöliittymä nojaa siksi vahvasti valmiiseen bootstrap -kirjastoon,
@@ -123,7 +107,7 @@ planilla ja se saattaa ”hibernoida”. Toisin sanoen palvelu ei vastaa
 ehkä välittömästi vaan lataamiseen voi mennä jopa minuutti, riippuen
 hieman palvelimen ruuhkasta.
 
-## Linkki GitHub repositorioon (eli tänne)
+## Linkki GitHub repositorioon
 
 Github repositorion osoite:
 https://github.com/fin-nidhogg/FS_Project1_Guestbook
