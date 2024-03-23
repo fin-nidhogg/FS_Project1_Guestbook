@@ -1,4 +1,7 @@
-// Luodaan express sovellus
+///////////////////////////////////////////////////
+// Geneeriset importit
+///////////////////////////////////////////////////
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
@@ -90,10 +93,7 @@ app.get("/newmessage", (req, res) => {
 
 app.post("/newmessage", (req, res) => {
     if (req.body.username === "" || req.body.country === "" || req.body.message === "") {
-        res.send("Please fill in all fields", 400);
-        setTimeout(() => {
-            res.redirect("/newmessage");
-        }, 2000);
+        res.send('Please fill in all fields! <a href="/newmessage">Back to Form</a>', 400);
         return;
     } else {
         saveData(req);
