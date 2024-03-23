@@ -2,6 +2,10 @@ const entryform = document.getElementById("entryform");
 const tabledata = document.getElementById("tabledata");
 
 
+////////////////////////////////////////////////////////////////////
+// Varmistetaan että sivu on ladattu ennen kuin suoritetaan koodia
+////////////////////////////////////////////////////////////////////
+
 window.onload = event => {
     console.log("document loaded");
     getMessages();
@@ -27,13 +31,19 @@ window.onload = event => {
 }
 
 
-// Funktio tietojen hakemiseksi palvelimelta
+////////////////////////////////////////////////////////////////////
+// Funktio tietojen hakemiseksi palvelimelta.
+// Funktio siis hakee datan rivi ja lisää rivi riviltä nättiin html-taulukkoon.
+////////////////////////////////////////////////////////////////////
+
 async function getMessages() {
     const response = await fetch("/entries");
     const messages = await response.json();
 
     // Tyhjennetään taulukko ennen uuden datan lisäämistä
     tabledata.innerHTML = '';
+
+    // Haetaan data ja lisätään foreach loopilla jokainen alkio taulukkoon
     messages.forEach(message => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -47,8 +57,10 @@ async function getMessages() {
     });
 }
 
+////////////////////////////////////////////////////////////////////
+// Funktion ajaxpyynnön lähettämiseksi palvelimelle käyttäen fetch-metodia.
+////////////////////////////////////////////////////////////////////
 
-// Funktion ajaxpyynnön lähettämiseksi palvelimelle käyttäen fetch-metodia
 const sendData = async (username, country, message) => {
     try {
         const response = await fetch('/newajaxmessage', {
@@ -69,5 +81,3 @@ const sendData = async (username, country, message) => {
         console.error('Error:', error);
     }
 };
-
-// TODO ilmeisesti CORS ongelma localhostin kanssa?
