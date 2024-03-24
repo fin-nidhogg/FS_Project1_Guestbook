@@ -100,8 +100,8 @@ ongelmanratkaisuun.
 
 ## Verkkosivuni osoite
 
-Verkkosivu löytyy osoitteesta
-<https://fs-project1-guestbook.onrender.com>  
+https://fs-project1-guestbook.onrender.com  
+
 Huomioithan, että sovellus on julkaistu render -alustalle ilmaisella
 planilla ja se saattaa ”hibernoida”. Toisin sanoen palvelu ei vastaa
 ehkä välittömästi vaan lataamiseen voi mennä jopa minuutti, riippuen
@@ -109,7 +109,6 @@ hieman palvelimen ruuhkasta.
 
 ## Linkki GitHub repositorioon
 
-Github repositorion osoite:
 https://github.com/fin-nidhogg/FS_Project1_Guestbook
 
 ## Linkki projektin videoesitykseen
