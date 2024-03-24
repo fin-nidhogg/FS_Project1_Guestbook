@@ -60,7 +60,7 @@ const saveData = (req) => {
 
 app.get("/", (req, res) => {
     res.render("./pages/home")
-    console.log(req.path)
+    console.log(`Incoming request ${req.method}: ${req.path}`)
 });
 
 ///////////////////////////////////////////////////
@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
 
 app.get("/guestbook", (req, res) => {
     res.render("./pages/guestbook", { entries: data });
-    console.log(req.path)
+    console.log(`Incoming request ${req.method}: ${req.path}`)
 });
 
 ///////////////////////////////////////////////////
@@ -86,7 +86,7 @@ app.get("/entries", (req, res) => {
 
 app.get("/newmessage", (req, res) => {
     res.render("./pages/newmessage")
-    console.log(req.path)
+    console.log(`Incoming request ${req.method}: ${req.path}`)
 });
 
 ///////////////////////////////////////////////////
@@ -94,6 +94,7 @@ app.get("/newmessage", (req, res) => {
 ///////////////////////////////////////////////////
 
 app.post("/newmessage", (req, res) => {
+    console.log(`Incoming request ${req.method}: ${req.path} with data -> Username: ${req.body.username}, Country: ${req.body.country}, Message: ${req.body.message}`)
     if (req.body.username === "" || req.body.country === "" || req.body.message === "") {
         res.status(400).send('Please fill in all fields! <a href="/newmessage">Back to Form</a>');
         return;
@@ -109,7 +110,7 @@ app.post("/newmessage", (req, res) => {
 
 app.get("/ajaxmessage", (req, res) => {
     res.render("./pages/ajaxmessage")
-    console.log(req.path)
+    console.log(`Incoming request ${req.method}: ${req.path}`)
 });
 
 ///////////////////////////////////////////////////
@@ -118,6 +119,7 @@ app.get("/ajaxmessage", (req, res) => {
 ///////////////////////////////////////////////////
 
 app.post("/newajaxmessage", (req, res) => {
+    console.log(`Incoming request ${req.method}: ${req.path} with data -> Username: ${req.body.username}, Country: ${req.body.country}, Message: ${req.body.message}`)
     try {
         if (req.body.username === "" || req.body.country === "" || req.body.message === "") {
             res.status(400).send('Please fill in all fields');
@@ -125,7 +127,7 @@ app.post("/newajaxmessage", (req, res) => {
         }
         else {
             saveData(req);
-            console.log("Dataa tulloopi");
+            console.log("Data saved successfully!");
             res.status(200).send('Data received successfully!');
         }
     }
