@@ -10,7 +10,7 @@ FullStack **Projektiraportti**
 [6 Linkit](#linkit)  
 [6.1 Verkkosivuni osoite](#verkkosivuni-osoite)  
 [6.2 Linkki GitHub repositorioon](#linkki-github-repositorioon)  
-[6.3 Linkki projektin videoesitykseen](#linkki-projektin-videoesitykseen)  
+[6.3 Linkki projektin videoesitykseen](#linkki-projektin-videoesitykseen)
 
 # Yleistä tietoa projektista
 
@@ -114,4 +114,4 @@ https://github.com/fin-nidhogg/FS_Project1_Guestbook
 
 ## Linkki projektin videoesitykseen
 
-#
+https://video.laurea.fi/media/TO00BS65-3006+Full+Stack+-+Vieraskirja/0_zyjhwnj0
