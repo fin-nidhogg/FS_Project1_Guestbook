@@ -139,7 +139,7 @@ app.post("/newajaxmessage", (req, res) => {
 // Jollei pyydettyä routea löyty, palautetaan virheilmoitus
 ///////////////////////////////////////////////////
 
-app.get("*", (req, res) => {
+app.get("/*splat", (req, res) => {
     res.status(404).send("Error 404: Cannot find the requested page");
 });
 
